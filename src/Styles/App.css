@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+  background: rgb(121, 224, 238);
+  min-height: 100vh;
+}
+
+.Tweet {
+  height: 200px;
+  width: 200px;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
