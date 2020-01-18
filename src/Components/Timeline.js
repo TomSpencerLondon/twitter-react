@@ -1,18 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import '../Styles/App.css';
 import Tweet from './Tweet';
+import axios from 'axios';
 
 function Timeline() {
-  useEffect(() => getInfo());
-  const [items, setItems] = useState([]);
-  const getInfo = () => {
-    fetch('http://localhost:8080', { method: 'GET' })
-      .then((data) => data.json())
-      .then((data) => setItems(data))
-  }
+  const [items, setItems] = useState({ data: [] });
+
+  useEffect(() => {
+   const fetchData = async () => {
+     const result = await axios(
+       "http://localhost:8080/programmers",
+     );
+     setItems(result);
+   };
+   fetchData();
+ }, []);
+
   return(
     <div className="App">
-      <Tweet />
+      {items.data.map(item => (
+        <Tweet name={item.name}
+               id={item.id}
+               key={item.id}
+        />
+      ))}
     </div>
   )
 }

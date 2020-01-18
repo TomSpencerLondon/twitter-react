@@ -1,14 +1,14 @@
 import React from 'react';
 import '../Styles/App.css';
 
-function Tweet() {
+function Tweet({ name, id }) {
   return(
     <div className="Tweet">
       <h2>
-        Username: 
+        Username: { name }
       </h2>
       <p>
-        id: 
+        id: { id }
       </p>
     </div>
   )
