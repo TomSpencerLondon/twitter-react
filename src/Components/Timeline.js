@@ -18,7 +18,7 @@ function Timeline() {
 
 
   return(
-    <div className="App">
+    <div>
       {
         items.map(item => (
         <Tweet name={item.name}

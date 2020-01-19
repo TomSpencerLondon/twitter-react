@@ -1,7 +1,10 @@
-.App {
+.Timeline {
   text-align: center;
   background: rgb(121, 224, 238);
   min-height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-content: space-around;
 }
 
 .Tweet {
